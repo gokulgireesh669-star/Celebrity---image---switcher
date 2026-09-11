@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .celebrity-box {
+            padding: 25px;
+            background: white;
+            border: 5px solid #999;
+            border-radius: 20px;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .celebrity-box img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        #celebrityName {
+            margin-bottom: 20px;
+            color: #222;
+            font-size: 24px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .virat-btn {
+            background: #2563eb;
+        }
+
+        .taylor-btn {
+            background: #ec4899;
+        }
+
+        .ronaldo-btn {
+            background: #16a34a;
+        }
+
+        @media (max-width: 480px) {
+            .celebrity-box {
+                padding: 20px;
+            }
+
+            .celebrity-box img {
+                width: 200px;
+                height: 200px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="celebrity-box" id="celebrityBox">
+
+            <!-- Default Placeholder Image -->
+            <img
+                id="celebrityImage"
+                src="https://placehold.co/250x250?text=Select+Celebrity"
+                alt="Celebrity"
+            >
+
+            <!-- Celebrity Name -->
+            <h2 id="celebrityName">Select a Celebrity</h2>
+
+            <!-- Buttons -->
+            <div class="buttons">
+
+                <button
+                    class="virat-btn"
+                    onclick="changeCelebrity('virat')">
+                    Virat Kohli
+                </button>
+
+                <button
+                    class="taylor-btn"
+                    onclick="changeCelebrity('taylor')">
+                    Taylor Swift
+                </button>
+
+                <button
+                    class="ronaldo-btn"
+                    onclick="changeCelebrity('ronaldo')">
+                    Cristiano Ronaldo
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeCelebrity(celebrity) {
+
+            const image = document.getElementById("celebrityImage");image
+            const name = document.getElementById("celebrityName");
+            const box = document.getElementById("celebrityBox");
+
+            if (celebrity === "virat") {
+
+                image.src = 
+                    "https://placehold.co/250x250/2563eb/ffffff?text=Virat+Kohlihttps://upload.wikimedia.org/wikipedia/commons/4/44/Virat_Kohli_with_AudiQ7.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original";
+
+                image.alt = "Virat Kohli";
+                name.textContent = "Virat Kohli";
+
+                box.style.border = "5px solid #2563eb";
+
+            }
+
+            else if (celebrity === "taylor") {
+
+                image.src =
+                    "https://placehold.co/250x250/ec4899/ffffff?text=Taylor+Swifthttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVCaacmb3lJ9s7O0tHaT-hVz6n4I0d93SnqBZj1yQ_ng&s=10";
+
+                image.alt = "Taylor Swift";
+                name.textContent = "Taylor Swift";
+
+                box.style.border = "5px dashed #ec4899";
+
+            }
+
+            else if (celebrity === "ronaldo") {
+
+                image.src =
+                    "https://placehold.co/250x250/16a34a/ffffff?text=Cristiano+Ronaldohttps://x.com/UnitedRedscom/status/1201496934013423618";
+
+                image.alt = "Cristiano Ronaldo";
+                name.textContent = "Cristiano Ronaldo";
+
+                box.style.border = "5px double #16a34a";
+
+            }
+        }
+    </script>
+
+</body>
+</html>
